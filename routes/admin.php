@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DiezmoController;
+use App\Http\Controllers\Admin\EventoController;
 use App\Http\Controllers\Admin\GastoController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\admin\MiembroController;
@@ -25,3 +26,5 @@ Route::resource('diezmos', DiezmoController::class)->except('show')->names('admi
 Route::resource('ofrendas', OfrendaController::class)->except('show')->names('admin.ofrendas');
 
 Route::resource('gastos', GastoController::class)->except('show')->names('admin.gastos');
+
+Route::resource('eventos', EventoController::class)->names('admin.eventos');

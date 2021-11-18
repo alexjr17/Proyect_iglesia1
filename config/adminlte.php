@@ -326,6 +326,13 @@ return [
                 ]
             ],
         ],
+        [
+            'text' => 'Eventos',
+            'route'  => 'admin.eventos.index',
+            'icon' => 'fa-fw fas fa-address-book',
+            'active' => ['admin/eventos*'],
+            // 'can'  => 'admin.eventos.index'
+        ],
         ['header' => 'Valances'],
         [
             'text'       => 'Total gastos',
