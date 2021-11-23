@@ -27,4 +27,8 @@ Route::resource('ofrendas', OfrendaController::class)->except('show')->names('ad
 
 Route::resource('gastos', GastoController::class)->except('show')->names('admin.gastos');
 
-Route::resource('eventos', EventoController::class)->names('admin.eventos');
+Route::get('/eventos', [EventoController::class, 'index'])->name('admin.eventos.index');
+Route::post('/eventos/agregar', [EventoController::class, 'store'])->name('admin.eventos.store');
+Route::get('/eventos/mostrar', [EventoController::class, 'show'])->name('admin.eventos.show');
+
+// Route::resource('eventos', EventoController::class)->names('admin.eventos');

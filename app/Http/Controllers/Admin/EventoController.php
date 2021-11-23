@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Evento;
 use Illuminate\Http\Request;
 
 class EventoController extends Controller
@@ -35,7 +36,8 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(Evento::$rules);
+        $evento = Evento::create($request->all());
     }
 
     /**
@@ -44,9 +46,10 @@ class EventoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Evento $evento)
     {
-        //
+        $evento = Evento::all();
+        return response()->json($evento);
     }
 
     /**
