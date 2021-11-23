@@ -29,6 +29,11 @@ Route::resource('gastos', GastoController::class)->except('show')->names('admin.
 
 Route::get('/eventos', [EventoController::class, 'index'])->name('admin.eventos.index');
 Route::post('/eventos/agregar', [EventoController::class, 'store'])->name('admin.eventos.store');
-Route::get('/eventos/mostrar', [EventoController::class, 'show'])->name('admin.eventos.show');
+Route::post('/eventos/mostrar/', [EventoController::class, 'show'])->name('admin.eventos.show');
+Route::post('/eventos/editar/{id}', [EventoController::class, 'edit'])->name('admin.eventos.edit');
+Route::post('/eventos/actualizar/{evento}', [EventoController::class, 'update'])->name('admin.eventos.update');
+Route::post('/eventos/borrar/{id}', [EventoController::class, 'destroy'])->name('admin.eventos.destroy');
+
+
 
 // Route::resource('eventos', EventoController::class)->names('admin.eventos');

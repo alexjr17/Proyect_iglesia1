@@ -1,7 +1,7 @@
 <form action="" id="form">
   {{-- @csrf --}}
  {!! csrf_field() !!}
-  <div class="form-group">
+  <div class="form-group d-none">
     <label for="id">id</label>
     <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">
     <small id="helpId" class="form-text text-muted">Help text</small>
@@ -24,13 +24,13 @@
       @enderror
   </div>
 
-  <div class="form-group">
+  <div class="form-group d-none">
     <label for="start">start</label>
     <input type="date" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="">
     <small id="helpId" class="form-text text-muted">Help text</small>
   </div>
 
-  <div class="form-group">
+  <div class="form-group d-none">
     <label for="end">end</label>
     <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
     <small id="helpId" class="form-text text-muted">Help text</small>
