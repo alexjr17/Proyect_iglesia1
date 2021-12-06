@@ -1,4 +1,18 @@
-@import 'tailwindcss/base';
+/* @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss/utilities'; */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import 'iglesia.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1, .h1{
+    @apply pb-6 text-3xl font-bold;
+}
+p{
+    @apply leading-tight mb-3;
+}
+li{
+    @apply pb-6 text-2xl;
+}

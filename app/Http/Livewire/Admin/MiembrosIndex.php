@@ -21,8 +21,9 @@ class MiembrosIndex extends Component
 
     public function render()
     {
-        $miembros = Miembro::where('user_id', '=', auth()->user()->id)
-                    ->Where(function($query) {
+        $miembros = Miembro::
+                    // where('user_id', '=', auth()->user()->id)->
+                    Where(function($query) {
                         $query->where('nombre', 'LIKE', '%'. $this->search. '%')
                               ->orwhere('apellido', 'LIKE', '%'. $this->search. '%');
                     })        

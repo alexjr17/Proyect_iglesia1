@@ -12,6 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
         @livewireStyles
 

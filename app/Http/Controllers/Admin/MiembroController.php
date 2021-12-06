@@ -93,7 +93,7 @@ class MiembroController extends Controller
      */
     public function edit(Miembro $miembro)
     {
-        $this->authorize('autor', $miembro);
+        // $this->authorize('autor', $miembro);
         $bautizo = [
             'Si' => 'Si',
             'No' => 'No'
