@@ -1,7 +1,8 @@
-<nav class="bg-gray-800" x-data="{ open : false }">
+<header class="">
+  <nav class="md:fixed z-10 w-full bg-blue-600" x-data="{ open : false }">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
-
+  
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
           <button x-on:click="open = !open" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
@@ -28,7 +29,7 @@
             </svg>
           </button>
         </div>
-
+  
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
           
           {{-- Logotipo --}}
@@ -36,21 +37,21 @@
             <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
             <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">
           </a>
-
+  
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               {{-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a> --}}
               
               @foreach ($categorias as $categoria)
-
+  
               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$categoria}}</a>
-
+  
               @endforeach
             </div>
           </div>
         </div>
-
+  
         @auth
             
           <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -74,11 +75,11 @@
                   <div x-show="open" x-on:click.away="open = false" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                       <!-- Active: "bg-gray-100", Not Active: "" -->
                       <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Tu perfil</a>
-
+  
                       @can('admin.home')
                         <a href="{{ route('admin.home') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Dashboard</a>
                       @endcan
-
+  
                       <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" {{ __('Log Out') }} class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">
@@ -88,9 +89,9 @@
                   </div>
               </div>
           </div>
-
+  
         @else
-
+  
         <div>
           <a href="{{ route('login') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
             Login
@@ -99,10 +100,10 @@
             Register
           </a>
         </div>
-
-
+  
+  
         @endauth
-
+  
       </div>
     </div>
   
@@ -118,4 +119,6 @@
         </div>
     </div>
   </nav>
+</header>
+
   

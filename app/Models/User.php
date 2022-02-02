@@ -80,4 +80,9 @@ class User extends Authenticatable
     public function gastos(){
         return $this->hasMany('App\Models\Gasto');
     }
+
+    //uno a mucho
+    public function carrucels(){
+        return $this->hasMany('App\Models\Carrucel');
+    }
 }

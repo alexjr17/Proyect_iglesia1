@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CarrucelController;
 use App\Http\Controllers\Admin\DiezmoController;
 use App\Http\Controllers\Admin\EventoController;
 use App\Http\Controllers\Admin\GastoController;
@@ -26,6 +27,8 @@ Route::resource('diezmos', DiezmoController::class)->except('show')->names('admi
 Route::resource('ofrendas', OfrendaController::class)->except('show')->names('admin.ofrendas');
 
 Route::resource('gastos', GastoController::class)->except('show')->names('admin.gastos');
+
+Route::resource('carrucel', CarrucelController::class)->names('admin.carrucel');
 
 Route::get('/eventos', [EventoController::class, 'index'])->name('admin.eventos.index');
 Route::post('/eventos/agregar', [EventoController::class, 'store'])->name('admin.eventos.store');

@@ -333,6 +333,12 @@ return [
             'active' => ['admin/eventos*'],
             // 'can'  => 'admin.eventos.index'
         ],
+        [
+            'text' => 'Carrucel',
+            'route'  => 'admin.carrucel.index',
+            'icon' => 'fa-fw fas fa-address-book',
+            'active' => ['admin/carrucel*'],
+        ],
         ['header' => 'Valances'],
         [
             'text'       => 'Total gastos',

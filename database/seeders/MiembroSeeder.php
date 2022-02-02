@@ -16,7 +16,7 @@ class MiembroSeeder extends Seeder
      */
     public function run()
     {
-        $miembros = Miembro::factory(70)->create();
+        $miembros = Miembro::factory(10)->create();
 
         foreach ($miembros as $miembro) {
             

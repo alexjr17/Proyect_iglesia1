@@ -21,14 +21,14 @@ class MiembrosIndex extends Component
 
     public function render()
     {
-        $miembros = Miembro::
+        $miembros = Miembro::all();
                     // where('user_id', '=', auth()->user()->id)->
-                    Where(function($query) {
-                        $query->where('nombre', 'LIKE', '%'. $this->search. '%')
-                              ->orwhere('apellido', 'LIKE', '%'. $this->search. '%');
-                    })        
-                    ->latest('id')
-                    ->paginate();
+                    // Where(function($query) {
+                    //     $query->where('nombre', 'LIKE', '%'. $this->search. '%')
+                    //           ->orwhere('apellido', 'LIKE', '%'. $this->search. '%');
+                    // })        
+                    // ->latest('id')
+                    // ->paginate();
 
         return view('livewire.admin.miembros-index', compact('miembros'));
     }
