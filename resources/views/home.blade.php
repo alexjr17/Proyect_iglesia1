@@ -10,7 +10,7 @@
       <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4 my-5">
         <div class="col-span-2 bg-white rounded-r-lg shadow-md overflow t-igual-1">
           <div class="m-6">
-            <h1 class="h1 md:sticky md:top-16 bg-white">Iglesia</h1>
+            <h1 class="h1 md:sticky md:top-16 bg-white">Iglesiaa</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere numquam adipisci facilis totam ratione, deleniti, temporibus inventore voluptatibus dolor quidem a vitae ipsa. Est doloribus tempora autem nemo. Ipsa, placeat.</p>
             <p>Sunt fugit ullam id esse fuga rerum soluta repudiandae labore! Doloribus suscipit optio adipisci earum beatae voluptates similique incidunt. Praesentium impedit sequi ducimus optio cum, nostrum omnis quas nam aspernatur?</p>
             <p>Pariatur aperiam id, nostrum voluptatem, modi voluptates consectetur labore minima et rerum, quasi perferendis inventore ab temporibus eaque saepe laborum! Fugit repellat id nesciunt ratione in repudiandae quisquam harum vitae!</p>
