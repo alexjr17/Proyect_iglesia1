@@ -18,7 +18,8 @@
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "postcss-import": "^14.0.1",
-        "tailwindcss": "^2.2.2"
+        "tailwindcss": "^2.2.2",
+        "webpack-cli": "^4.9.2"
     },
     "dependencies": {
         "swiper": "^7.3.3"
