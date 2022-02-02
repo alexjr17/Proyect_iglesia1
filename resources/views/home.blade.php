@@ -4,7 +4,7 @@
   <main class="">
     
     @livewire('swiper')
-    
+    ah
     <div class="container">
 
       <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4 my-5">

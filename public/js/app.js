@@ -5298,6 +5298,8 @@ alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 
 __webpack_require__(/*! ./swiper */ "./resources/js/swiper.js");
 
+__webpack_require__(/*! ./carrucel */ "./resources/js/carrucel.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -5328,6 +5330,31 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/carrucel.js":
+/*!**********************************!*\
+  !*** ./resources/js/carrucel.js ***!
+  \**********************************/
+/***/ (() => {
+
+var swiper = new Swiper('.mySwiper', {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
+});
 
 /***/ }),
 
