@@ -4,7 +4,7 @@
   <main class="">
     
     @livewire('swiper')
-    ah
+    
     <div class="container">
 
       <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4 my-5">
@@ -39,7 +39,7 @@
           </div>
         </div>
 
-        <div class="md:row-span-2 flex flex-col" x-data="{ 'showModal': false }" @keydown.escape="showModal = false" x-cloak>
+        <div class="md:row-span-2 flex flex-col">
           @livewire('eventos')          
         </div>
 

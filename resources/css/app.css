@@ -1,13 +1,10 @@
-/* @import 'tailwindcss/base';
+@import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; */
+@import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import 'swiper.css';
 @import 'iglesia.css';
+@import 'swiper.css';
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 .h1{
     @apply pb-6 text-3xl font-bold;
