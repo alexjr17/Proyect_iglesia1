@@ -8,8 +8,13 @@ use Livewire\Component;
 class ModalEvento extends Component
 {
     public $evento;
-    public function render(Evento $evento)
+    public function mount(Evento $evento)
     {
-        return view('livewire.modal-evento',compact('evento'));
+        $this->evento=$evento;
+    }
+    public function render()
+    {
+        $eventomodal = Evento::where('id', $this->evento->id)->get();
+        return view('livewire.modal-evento',compact('eventomodal'));
     }
 }

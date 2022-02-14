@@ -9,6 +9,10 @@ use Carbon\CarbonInterface;
 
 class EstadoFecha extends Component
 {
+    public function __construct()
+    {
+        Carbon::setLocale('es_MX');
+    }
     public $evento;
     public function mount(Evento $evento){
         $this->evento = $evento;
@@ -16,7 +20,7 @@ class EstadoFecha extends Component
     public function render()
     {
 
-        $estado_fecha = Carbon::now()->subDays()->diffForHumans($this->evento->start,  ['syntax' => CarbonInterface::DIFF_RELATIVE_TO_NOW]);
+        $estado_fecha = Carbon::now()->diffForHumans($this->evento->start);
         return view('livewire.estado-fecha',compact('estado_fecha', $this->evento));
     }
 }
