@@ -12,11 +12,11 @@
 
             {!! Form::open(['route' => 'admin.miembros.store', 'autocomplete' => 'off', 'files' => true]) !!}
 
-                {!! Form::hidden('user_id', auth()->user()->id) !!}
+            {!! Form::hidden('user_id', auth()->user()->id) !!}
 
-                @include('admin.miembros.partials.form')
+            @include('admin.miembros.partials.form')
 
-            {!! Form::submit('Crear miembro', ['class' => 'btn btn-primary ']) !!}
+            {!! Form::submit('Crear miembro', ['class' => 'btn-edit']) !!}
 
             {!! Form::close() !!}
         </div>
@@ -25,53 +25,57 @@
 
 @section('css')
 
-<style>
-    .image-wrapper{
-        position: relative;
-        padding-bottom: 56.25%
-    }
-    .image-wrapper img{
-        position: absolute;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-</style>
-    
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+
+    <style>
+        .image-wrapper {
+            position: relative;
+            padding-bottom: 56.25%
+        }
+
+        .image-wrapper img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+
 @endsection
 
 @section('js')
     <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
 
+    <script>
+        function createTextSlug() {
+            var apellido = document.getElementById("apellido").value;
+            var cedula = document.getElementById("cedula").value;
+            var title = document.getElementById("nombre").value + ' ' + apellido + ' C.c' + cedula;
+            document.getElementById("slug").value = generateSlug(title);
+        }
 
-    <script>  
-    function createTextSlug()
-    {
-        var apellido =document.getElementById("apellido").value;
-        var cedula =document.getElementById("cedula").value;
-        var title = document.getElementById("nombre").value + ' '+ apellido+ ' C.c'+ cedula;
-                    document.getElementById("slug").value = generateSlug(title);
-    }
-    function generateSlug(text)
-    {
-        return text.toString().toLowerCase()
-            .replace(/^-+/, '')
-            .replace(/-+$/, '')
-            .replace(/\s+/g, '-')
-            .replace(/\-\-+/g, '-')
-            .replace(/[^\w\-]+/g, '');
-    }
+        function generateSlug(text) {
+            return text.toString().toLowerCase()
+                .replace(/^-+/, '')
+                .replace(/-+$/, '')
+                .replace(/\s+/g, '-')
+                .replace(/\-\-+/g, '-')
+                .replace(/[^\w\-]+/g, '');
+        }
 
-    document.getElementById("file").addEventListener('change', cambiarImagen);
-    function cambiarImagen(event){
-        var file = event.target.files[0];
+        document.getElementById("file").addEventListener('change', cambiarImagen);
 
-        var reader = new FileReader();
-        reader.onload = (event) => {
-            document.getElementById("picture").setAttribute('src', event.target.result);
-        };
+        function cambiarImagen(event) {
+            var file = event.target.files[0];
 
-        reader.readAsDataURL(file);
-    }
+            var reader = new FileReader();
+            reader.onload = (event) => {
+                document.getElementById("picture").setAttribute('src', event.target.result);
+            };
+
+            reader.readAsDataURL(file);
+        }
     </script>
 @endsection

@@ -15,7 +15,7 @@ class CarrucelSeeder extends Seeder
      */
     public function run()
     {
-        $carrucels = Carrucel::factory(3)->create();
+        $carrucels = Carrucel::factory(5)->create();
 
         foreach ($carrucels as $carrucel) {
             Image::factory(1)->create([

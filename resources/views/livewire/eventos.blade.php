@@ -24,7 +24,6 @@
         @endforeach
 
         <x-modal>
-
             @isset($show_evento)
 
                 <!-- imagen -->

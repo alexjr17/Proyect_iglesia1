@@ -4,34 +4,46 @@
 
 @section('content_header')
     <h1>Dashboard</h1>
-    @if(session('info'))
+    @if (session('info'))
         <div class="alert alert-success" role="alert">
-            <strong>{{session('info')}}</strong>
+            <strong>{{ session('info') }}</strong>
         </div>
     @endif
 @stop
 
 @section('content')
-<div class="card">}
-    
-    <img class="card-img-top" src="holder.js/100x180/" alt="">
-    <div class="card-body">
-        {!! Form::model($carrucel, ['route' => ['admin.carrucel.update', $carrucel], 'files' => true, 'method' => 'put']) !!}
-    
-    @include('admin.carrucel.partials.form')
+    <div class="card">
+        <div class="card-body">
+            {!! Form::model($carrucel, ['route' => ['admin.carrucel.update', $carrucel], 'files' => true, 'method' => 'put']) !!}
 
-    {!! Form::submit('actualizar', ['class' => 'btn btn-primary']) !!}
+            @include('admin.carrucel.partials.form')
+            {!! Form::submit('actualizar', ['class' => 'btn-edit bottom-2']) !!}
 
-    {!! Form::close() !!}
+            {!! Form::close() !!}
+        </div>
     </div>
-</div>
-    
+
 @stop
 
 @section('css')
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        document.getElementById("file").addEventListener('change', cambiarImagen);
+
+        function cambiarImagen(event) {
+            var file = event.target.files[0];
+
+            var reader = new FileReader();
+            reader.onload = (event) => {
+                document.getElementById("picture").setAttribute('src', event.target.result);
+            };
+
+            reader.readAsDataURL(file);
+        }
+    </script>
 @stop

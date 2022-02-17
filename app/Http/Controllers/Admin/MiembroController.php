@@ -50,7 +50,7 @@ class MiembroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MiembroRequest $request, Miembro $miembro)
+    public function store(Request $request)
     {
 
         
@@ -69,7 +69,6 @@ class MiembroController extends Controller
                 'fecha' => $request->fecha
             ]);
         }
-
         return redirect()->route('admin.miembros.edit', $miembro)->with('info', 'El miembro se creo con exito');
     }
 

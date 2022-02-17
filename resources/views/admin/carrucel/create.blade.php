@@ -14,7 +14,7 @@
 
             {!! Form::hidden('user_id', auth()->user()->id) !!}
 
-                @include('admin.carrucel.partials.form')
+            @include('admin.carrucel.partials.form')
 
             {!! Form::submit('Crear Carrucel', ['class' => 'btn btn-primary mt-6']) !!}
 
@@ -24,9 +24,9 @@
 @stop
 
 @section('css')
-<link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-    
+
 @endsection
 
 @section('js')
@@ -34,17 +34,17 @@
 
 
     <script>
+        document.getElementById("file").addEventListener('change', cambiarImagen);
 
-    document.getElementById("file").addEventListener('change', cambiarImagen);
-    function cambiarImagen(event){
-        var file = event.target.files[0];
+        function cambiarImagen(event) {
+            var file = event.target.files[0];
 
-        var reader = new FileReader();
-        reader.onload = (event) => {
-            document.getElementById("picture").setAttribute('src', event.target.result);
-        };
+            var reader = new FileReader();
+            reader.onload = (event) => {
+                document.getElementById("picture").setAttribute('src', event.target.result);
+            };
 
-        reader.readAsDataURL(file);
-    }
+            reader.readAsDataURL(file);
+        }
     </script>
 @endsection
