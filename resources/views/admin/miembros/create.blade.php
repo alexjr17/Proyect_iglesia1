@@ -16,7 +16,7 @@
 
             @include('admin.miembros.partials.form')
 
-            {!! Form::submit('Crear miembro', ['class' => 'btn-edit']) !!}
+            {!! Form::submit('Crear miembro', ['class' => 'btn-edit flex-nowrap']) !!}
 
             {!! Form::close() !!}
         </div>

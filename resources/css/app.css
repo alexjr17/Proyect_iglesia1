@@ -2,13 +2,47 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import 'iglesia.css';
+
+/* @import 'iglesia.css'; */
+
 @import 'swiper.css';
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+.container {
+    @apply max-w-7xl mx-auto px-2;
+}
 
-h1{
+@media (min-width: 640px) {
+    .container {
+        @apply px-6;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        @apply px-8;
+    }
+}
+
+.carrucel {
+    @apply relative flex rounded-lg shadow-xl mb-4 h-56 z-0;
+}
+
+.btn-edit {
+    @apply inline-flex items-center justify-center px-2 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring focus:ring-red-200 active:bg-blue-600 disabled:opacity-25 transition;
+}
+
+h1 {
     @apply pb-6 text-3xl font-bold;
 }
-p{
+
+p {
     @apply leading-tight mb-3;
+}
+
+label {
+    @apply block font-medium text-sm text-gray-700;
+}
+
+.input {
+    @apply w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm;
 }

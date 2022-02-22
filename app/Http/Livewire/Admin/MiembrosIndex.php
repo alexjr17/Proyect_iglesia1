@@ -9,6 +9,7 @@ use Livewire\WithPagination;
 
 class MiembrosIndex extends Component
 {
+
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
 
@@ -21,6 +22,7 @@ class MiembrosIndex extends Component
 
     public function render()
     {
+        
         $miembros = Miembro::all();
                     // where('user_id', '=', auth()->user()->id)->
                     // Where(function($query) {

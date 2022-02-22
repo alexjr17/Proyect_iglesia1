@@ -26,11 +26,6 @@
     {!! Form::label('slug', 'Slug', ['class' => 'hidden']) !!}
     {!! Form::text('slug', null, ['class' => 'hidden', 'placeholder' => 'Se genera url amigable', 'readonly']) !!}
 
-    @error('slug')
-        <small class="text-danger">
-            {{ $message }}
-        </small>
-    @enderror
 
     <div class="col-span-2">
         {!! Form::label('cedula', 'Cedula', ['class' => 'label']) !!}
@@ -70,7 +65,19 @@
 
     <div class="col-span-2">
         {!! Form::label('ciudad', 'Ciudad', ['class' => 'label']) !!}
-        {!! Form::text('ciudad', null, ['class' => 'input', 'placeholder' => 'Ingrese ciudad']) !!}
+        <select name="ciudad" id="" class="input">
+            <option value=""></option>
+            @foreach ($cities as $city)
+                <option class="input" value="{{ $city['city_name'] }}"
+                @isset($miembro)
+                        @if ($miembro->ciudad == $city['city_name'])
+                        selected
+                        @endif
+                @endisset
+                >{{ $city['city_name'] }}</option>
+            @endforeach
+        </select>
+        {{-- {!! Form::select('ciudad', $cities, null, ['class' => 'input', 'placeholder' => 'Ingrese ciudad']) !!} --}}
 
         @error('ciudad')
             <small class="text-danger">
@@ -93,7 +100,7 @@
     </div>
 
     <div class="col-span-1">
-        {!! Form::label('bautizo', 'Bautizo', ['class' => 'label']) !!}
+        {!! Form::label('bautizo', 'bautizo', ['class' => 'label']) !!}
         {!! Form::select('bautizo', $bautizo, null, ['class' => 'input', 'placeholder' => 'estado selecione si o no']) !!}
 
         @error('bautizo')
@@ -105,13 +112,12 @@
     </div>
 
     <div class="col-span-1">
-        {!! Form::label('fecha', 'Fecha', ['class' => 'label']) !!}
+        {!! Form::label('fecha', 'Fecha', ['class' => '']) !!}
         @isset($miembro->fecha)
             {!! Form::date('fecha', $miembro->fecha->fecha, ['class' => 'form-control', 'placeholder' => 'Ingrese fecha']) !!}
         @else
             {!! Form::date('fecha', null, ['class' => 'input', 'placeholder' => 'Ingrese fecha']) !!}
         @endisset
-
         @error('fecha')
             <small class="text-danger">
                 {{ $message }}
@@ -132,13 +138,11 @@
                 {!! Form::label('file', 'imagen que se gurdara ppar el miembro', ['class' => 'label']) !!}
                 {!! Form::file('file', ['class' => 'form-control-file', 'accept' => 'image/*']) !!}
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt iusto assumenda temporibus fugiat,
-                optio quisquam deleniti quasi necessitatibus, deserunt ratione et maiores ut ducimus perspiciatis sit
-                repudiandae ex accusamus illo.</p>
 
             @error('file')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
     </div>
+
 </div>
