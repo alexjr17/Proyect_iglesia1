@@ -48,7 +48,7 @@
     </script>
 
 <script src="{{ asset('js/agenda.js') }}"></script>
-    <script>
-    
-      </script>
+<script type="text/javascript">
+
+</script>
 @stop

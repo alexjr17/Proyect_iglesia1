@@ -20,11 +20,7 @@ class MiembroController extends Controller
         $this->middleware('can:admin.miembros.index')->only('index');
         $this->middleware('can:admin.miembros.create')->only('create', 'store');
         $this->middleware('can:admin.miembros.edit')->only('edit', 'update');
-        $this->location();
-        $this->bautizo = [
-            'Si' => 'Si',
-            'No' => 'No'
-        ];
+        
     }
 
     /**
@@ -44,6 +40,11 @@ class MiembroController extends Controller
      */
     public function create()
     {
+        $this->location();
+        $this->bautizo = [
+            'Si' => 'Si',
+            'No' => 'No'
+        ];
         $cities = $this->cities->json();
         $bautizo = $this->bautizo;
         return view('admin.miembros.create', compact('cities', 'bautizo'));
@@ -98,6 +99,11 @@ class MiembroController extends Controller
     {
         // $this->authorize('autor', $miembro);
 
+        $this->location();
+        $this->bautizo = [
+            'Si' => 'Si',
+            'No' => 'No'
+        ];
         $cities = $this->cities->json();
         $bautizo = $this->bautizo;
         return view('admin.miembros.edit', compact('miembro', 'bautizo','cities'));

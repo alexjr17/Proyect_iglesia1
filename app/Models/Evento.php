@@ -17,8 +17,8 @@ class Evento extends Model
 
     protected $fillable = ['title', 'descripcion', 'start', 'end'];
     
-    protected $dates = [
-        'start',
-    ];
+    // protected $dates = [
+    //     'start',
+    // ];
 
 }
