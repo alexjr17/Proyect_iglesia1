@@ -35,7 +35,10 @@
 @stop
 
 @section('css')
+<link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
+
 @stop
 
 @section('js')

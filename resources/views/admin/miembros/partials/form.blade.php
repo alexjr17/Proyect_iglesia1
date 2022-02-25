@@ -23,9 +23,14 @@
 
     </div>
 
-    {!! Form::label('slug', 'Slug', ['class' => 'hidden']) !!}
-    {!! Form::text('slug', null, ['class' => 'hidden', 'placeholder' => 'Se genera url amigable', 'readonly']) !!}
+    {!! Form::label('slug', 'Slug', ['class' => '']) !!}
+    {!! Form::text('slug', null, ['class' => '', 'placeholder' => 'Se genera url amigable']) !!}
 
+    @error('slug')
+            <small class="text-danger">
+                {{ $message }}
+            </small>
+        @enderror
 
     <div class="col-span-2">
         {!! Form::label('cedula', 'Cedula', ['class' => 'label']) !!}

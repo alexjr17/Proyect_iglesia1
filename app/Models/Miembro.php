@@ -7,16 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Miembro extends Model
 {
-
-    protected $table = 'miembros';
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     use HasFactory;
 
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }   
+    // public function getRouteKeyName()
+    // {
+    //     return 'slug';
+    // }   
 
     public function user(){
         return $this->belongsTo('App\Models\User');

@@ -40,6 +40,7 @@ class EventoController extends Controller
     {
         $request->validate(Evento::$rules);
         $evento = Evento::create($request->all());
+        return response()->json($evento);
     }
 
     /**

@@ -35,7 +35,7 @@ class MiembroRequest extends FormRequest
             'apellido' => 'required',
             'slug' => 'required | unique:miembros',
             'cedula' => 'required',
-            'correo' => 'required',
+            'correo' => 'required|email',
             'telefono' => 'required',
             'ciudad' => 'required',
             'direccion' => 'required',

@@ -4,14 +4,14 @@ let formulario = document.querySelector("#form");
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        with: 100,
+        timeZone: 'UTC',
         initialView: 'dayGridMonth',
         locale: "es",
         displayEventTime: false,
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
-            right: 'dayGridMonth,listWeek'
+            right: 'dayGridMonth'
         },
 
         eventSources: {
@@ -31,6 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
             $("#btnGuardar").removeClass('d-none');
             $("#btnEliminar").addClass('d-none');
             $("#btnModificar").addClass('d-none');
+            $('#error-title').addClass('hidden');
+            $('#error-descripcion').addClass('hidden');
+            $('#error-start').addClass('hidden');
+            $('#error-end').addClass('hidden');
         },
         eventClick: function (info) {
             var evento = info.event;
@@ -49,6 +53,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         $("#btnGuardar").addClass('d-none');
                         $("#btnEliminar").removeClass('d-none');
                         $("#btnModificar").removeClass('d-none');
+                        $('#error-title').addClass('hidden');
+                        $('#error-descripcion').addClass('hidden');
+                        $('#error-start').addClass('hidden');
+                        $('#error-end').addClass('hidden');
+
                     }
                 ).catch(
                     error => {
@@ -69,18 +78,18 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("btnEliminar").addEventListener("click", function () {
 
         //la función confirm nos regresa true si es seleccionado si, sino nos regresa false.
-        if (confirm("¿Confirma ELIMINAR: "+formulario.title.value + "?")) {
+        if (confirm("¿Confirma ELIMINAR: " + formulario.title.value + "?")) {
             enviardatos("/admin/eventos/borrar/" + formulario.id.value);
-            alert("¡Se eliminado: "+formulario.title.value+ "!")
+            alert("¡Se eliminado: " + formulario.title.value + "!")
         } else {
             alert("Cancelado")
         }
-        
+
     });
     document.getElementById("btnModificar").addEventListener("click", function () {
-        if (confirm("¿Confirma ACTUALIZAR : "+formulario.title.value + "?")) {
+        if (confirm("¿Confirma ACTUALIZAR : " + formulario.title.value + "?")) {
             enviardatos("/admin/eventos/actualizar/" + formulario.id.value);
-            alert("¡Se ACTULIZO: "+formulario.title.value+ "!")
+            alert("¡Se ACTULIZO: " + formulario.title.value + "!")
         } else {
             alert("Cancelado")
         }
@@ -103,17 +112,37 @@ document.addEventListener('DOMContentLoaded', function () {
             ).catch(
                 error => {
                     if (error.response) {
+                        if (error.response.data.errors.title) {
+                            $('#error-title').removeClass('hidden').text(error.response.data.errors.title);
+                        } else {
+                            $('#error-title').addClass('hidden')
+                        }
+                        if (error.response.data.errors.descripcion) {
+                            $('#error-descripcion').removeClass('hidden').text(error.response.data.errors.descripcion);
+                        } else {
+                            $('#error-descripcion').addClass('hidden')
+                        }
+                        if (error.response.data.errors.start) {
+                            $('#error-start').removeClass('hidden').text(error.response.data.errors.start);
+                        } else {
+                            $('#error-start').addClass('hidden')
+                        }
+                        if (error.response.data.errors.end) {
+                            $('#error-end').removeClass('hidden').text(error.response.data.errors.end);
+                        } else {
+                            $('#error-end').addClass('hidden')
+                        }
                         console.log(error.response.data);
+                    } else {
+                        $('#error-title').addClass('hidden')
                     }
                 }
             );
     }
 
-
-
-
-
-
+    function validete(object) {
+        return (typeof object !== 'undefined');
+    }
 
 });
 
