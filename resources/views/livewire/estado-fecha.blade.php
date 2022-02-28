@@ -1,4 +1,4 @@
 <div>
-    {{$evento->start->toFormattedDateString()}} | 
+    {{$evento->start}} | 
     {{$estado_fecha}}
 </div>

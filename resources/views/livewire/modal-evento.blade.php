@@ -14,7 +14,7 @@
         <!-- content -->
         <div>
             {{ $show_evento->descripcion }}
-            <p>{{ $show_evento->start->toFormattedDateString() }}</p>
+            <p>{{ $show_evento->start }}</p>
             <p>...</p>
         </div>
     @endisset

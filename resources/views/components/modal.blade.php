@@ -30,7 +30,7 @@
     <div style="background-color: rgba(0,0,0,0.5)" x-show="showModal"
         :class="{ 'fixed inset-0 z-10 flex items-center justify-center': showModal }">
         <!--Dialog-->
-        <div class="bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg py-8 text-left px-6 relative overflow-y-auto h-96"
+        <div class="bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lgrelative overflow-y-auto flex-col py-2 px-1"
             x-show="showModal" @click.away="showModal = false" x-transition:enter="ease-out duration-300"
             x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
             x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100"

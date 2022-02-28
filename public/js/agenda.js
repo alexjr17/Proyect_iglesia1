@@ -80,7 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
         //la función confirm nos regresa true si es seleccionado si, sino nos regresa false.
         if (confirm("¿Confirma ELIMINAR: " + formulario.title.value + "?")) {
             enviardatos("/admin/eventos/borrar/" + formulario.id.value);
-            alert("¡Se eliminado: " + formulario.title.value + "!")
         } else {
             alert("Cancelado")
         }
