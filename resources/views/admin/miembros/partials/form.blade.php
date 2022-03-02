@@ -24,7 +24,8 @@
     </div>
 
     {!! Form::label('slug', 'Slug', ['class' => '']) !!}
-    {!! Form::text('slug', null, ['class' => '', 'placeholder' => 'Se genera url amigable']) !!}
+    {!! Form::text('slug', null, ['class' => '', 'placeholder' => 'Se genera url amigable'
+    ]) !!}
 
     @error('slug')
             <small class="text-danger">
