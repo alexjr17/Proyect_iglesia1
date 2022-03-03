@@ -27,7 +27,7 @@
                         @foreach ($gastos as $gasto)
                         <tr>
                             <td>{{$gasto->id}}</td>
-                            <td>{{money_format('%.2n', $gasto->monto)}}</td>
+                            <td>$ {{ number_format($gasto->monto, 0, ',', '.')}}</td>
                             {{-- <td>{{$gasto->proposito->nombre}}</td> --}}
                             <td>
                                 @isset($gasto->proposito)

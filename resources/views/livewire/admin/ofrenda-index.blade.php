@@ -22,7 +22,7 @@
                         @foreach ($ofrendas as $ofrenda)
                         <tr>
                             <td>{{$ofrenda->id}}</td>
-                            <td>{{ money_format('%.2n', $ofrenda->recaudo)}}</td>
+                            <td>$ {{ number_format($ofrenda->recaudo, 0, ',', '.')}}</td>
                             <td>{{$ofrenda->created_at}}</td>
                             @can('admin.ofrendas.edit')
                                 <td whidth="10px">

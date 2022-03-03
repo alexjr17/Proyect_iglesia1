@@ -4,8 +4,13 @@ namespace App\Http\Livewire;
 
 use App\Models\Diezmo;
 use App\Models\Gasto;
+use App\Models\Miembro;
 use App\Models\Ofrenda;
+use App\Models\User;
+use App\Models\Evento;
+use Carbon\Carbon;
 use Livewire\Component;
+use Spatie\Permission\Models\Role;
 
 class ValanceIndex extends Component
 {
@@ -19,6 +24,8 @@ class ValanceIndex extends Component
             $diezmos = Diezmo::sum('monto');
             $ofrendas = Ofrenda::sum('recaudo');
             $gastos = Gasto::sum('monto');
+            $eventos = Evento::count();
+            $eventos = Evento::count();
         } else {
             $diezmos = Diezmo::where('created_at', 'LIKE', '%' . $this->search . '%')
                 ->sum('monto');
@@ -26,10 +33,18 @@ class ValanceIndex extends Component
                 ->sum('recaudo');
             $gastos = Gasto::where('created_at', 'LIKE', '%' . $this->search . '%')
                 ->sum('monto');
+            $eventos = Evento::where('start', 'LIKE', '%' . $this->search . '%')->count();
+
         }
         $t_ingresoss = $this->sumaingresos($diezmos, $ofrendas);
         $t_valancee = $this->totalvalance($gastos);
-        return view('livewire.valance-index', compact('diezmos', 'ofrendas', 'gastos', 't_ingresoss', 't_valancee'));
+
+        $miembros = Miembro::count();
+        $roles = count(User::withCount('roles')->get());
+        return view(
+            'livewire.valance-index',
+            compact('diezmos', 'ofrendas', 'gastos', 't_ingresoss', 't_valancee', 'miembros', 'roles', 'eventos')
+        );
     }
 
     public function sumaingresos($ing1, $ing2)

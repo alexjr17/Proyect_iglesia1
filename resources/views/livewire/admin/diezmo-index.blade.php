@@ -21,7 +21,7 @@
                         @foreach ($diezmos as $diezmo)
                         <tr>
                             <td>{{$diezmo->id}}</td>
-                            <td id="monto">{{ money_format('%.2n', $diezmo->monto)}}</td>
+                            <td id="monto">$ {{ number_format($diezmo->monto, 0, ',', '.')}}</td>
                             <td>{{$diezmo->miembro->nombre. ' '. $diezmo->miembro->apellido}}</td>
                             <td>{{$diezmo->created_at}}</td>
                             @can('admin.diezmos.edit')
