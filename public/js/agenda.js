@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         // events: baseURL+"/admin/eventos/mostrar",
-
         dateClick: function (info) {
             formulario.reset();
             formulario.start.value = info.dateStr;

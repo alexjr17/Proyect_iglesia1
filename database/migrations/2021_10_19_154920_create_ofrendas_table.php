@@ -16,12 +16,12 @@ class CreateOfrendasTable extends Migration
         Schema::create('ofrendas', function (Blueprint $table) {
             $table->id();
             $table->integer('recaudo');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
 
             $table->foreign('user_id')
                     ->references('id')
                     ->on('users')
-                    ->onUpdate('cascade');
+                    ->onDelete('set null');
                     
             $table->timestamps();
         });

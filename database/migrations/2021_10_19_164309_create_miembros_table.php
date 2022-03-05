@@ -24,12 +24,12 @@ class CreateMiembrosTable extends Migration
             $table->string('direccion');
             $table->string('ciudad');
             $table->string('bautizo');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
 
             $table->foreign('user_id')
                     ->references('id')
                     ->on('users')
-                    ->onUpdate('cascade');
+                    ->onDelete('set null');
             $table->timestamps();
         });
     }

@@ -256,7 +256,7 @@ return [
         [
             'text'    => 'Usuarios',
             'icon'    => 'fas fa-fw fa-money-check',
-            'active' => ['admin/propositos*', 'admin/gastos*'],
+            'active' => ['admin/propositos*'],
             'can'  => ['admin.users.index', 'admin.roles.index'],
             'submenu' => [
                 [
@@ -331,30 +331,32 @@ return [
             'route'  => 'admin.eventos.index',
             'icon' => 'fa-fw fas fa-address-book',
             'active' => ['admin/eventos*'],
-            // 'can'  => 'admin.eventos.index'
+            'can'  => 'admin.eventos.index'
         ],
         [
             'text' => 'Carrucel',
             'route'  => 'admin.carrucel.index',
             'icon' => 'fa-fw fas fa-address-book',
             'active' => ['admin/carrucel*'],
+            'can'  => 'admin.carrucel.index'
+
         ],
-        ['header' => 'Valances'],
-        [
-            'text'       => 'Total gastos',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'Total inresos',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'total actual',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        // ['header' => 'Valances'],
+        // [
+        //     'text'       => 'Total gastos',
+        //     'icon_color' => 'red',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'Total inresos',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'total actual',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
     ],
 
     /*

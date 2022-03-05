@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Gasto;
+use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -13,7 +14,8 @@ class GastoIndex extends Component
 
     public $search;
 
-    public function updatingSearch(){
+    public function updatingSearch()
+    {
         $this->resetPage();
     }
 
@@ -21,7 +23,10 @@ class GastoIndex extends Component
     public function render()
     {
 
-        $gastos = Gasto::where('monto', 'LIKE', '%'. $this->search. '%')       
+        $gastos = Gasto::Where(function ($query) {
+                        $query->where('monto', 'LIKE', '%' . $this->search . '%')
+                        ->orwhere('created_at', 'LIKE', '%' . $this->search . '%');
+                    })
                     ->latest('id')
                     ->paginate();
         return view('livewire.admin.gasto-index', compact('gastos'));

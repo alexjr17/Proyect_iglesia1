@@ -16,11 +16,17 @@ class CreateDiezmosTable extends Migration
         Schema::create('diezmos', function (Blueprint $table) {
             $table->id();
             $table->integer('monto');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('miembro_id')->nullable();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('miembro_id')->references('id')->on('miembros')->onDelete('set null');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('set null');
+            $table->foreign('miembro_id')
+                ->references('id')
+                ->on('miembros')
+                ->onDelete('set null');
             $table->timestamps();
         });
     }

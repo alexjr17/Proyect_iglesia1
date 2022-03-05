@@ -31,7 +31,7 @@
                             @endcan
                             @can('admin.ofrendas.destroy')
                                 <td whidth="10px">
-                                    <form action="{{ route('admin.ofrendas.destroy', $ofrenda) }}" method="post">
+                                    <form action="{{ route('admin.users.destroy', $ofrenda) }}" method="post">
                                         @method('delete')                            
                                         @csrf
                                         <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>

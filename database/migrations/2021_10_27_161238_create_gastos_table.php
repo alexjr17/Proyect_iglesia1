@@ -17,16 +17,17 @@ class CreateGastosTable extends Migration
             $table->id();
             $table->integer('monto');
             $table->string('detalle');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('proposito_id');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('proposito_id')->nullable();
 
             $table->foreign('user_id')
                     ->references('id')
                     ->on('users')
-                    ->onUpdate('cascade');
+                    ->onDelete('set null');
             $table->foreign('proposito_id')
                     ->references('id')
-                    ->on('propositos');
+                    ->on('propositos')
+                    ->onDelete('set null');
             $table->timestamps();
         });
     }

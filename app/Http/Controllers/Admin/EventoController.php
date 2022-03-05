@@ -9,7 +9,13 @@ use Carbon\Carbon;
 
 class EventoController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('can:admin.eventos.index')->only('index');
+        $this->middleware('can:admin.eventos.create')->only('create', 'store');
+        $this->middleware('can:admin.eventos.edit')->only('edit', 'update');
+        $this->middleware('can:admin.eventos.destroy')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *

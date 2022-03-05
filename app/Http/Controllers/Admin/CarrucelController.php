@@ -14,6 +14,13 @@ class CarrucelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('can:admin.carrucel.index')->only('index');
+        $this->middleware('can:admin.carrucel.create')->only('create', 'store');
+        $this->middleware('can:admin.carrucel.edit')->only('edit', 'update');
+        $this->middleware('can:admin.carrucel.destroy')->only('destroy');
+    }
     public function index()
     {
         return view('admin.carrucel.index');

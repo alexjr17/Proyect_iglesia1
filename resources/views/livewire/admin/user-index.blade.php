@@ -25,6 +25,11 @@
                                 @can('admin.users.edit')
                                     <td width='10px'>
                                         <a class="btn btn-primary" href="{{ route('admin.users.edit', $user) }}">Editar</a>
+                                        <form action="{{ route('admin.users.destroy', $user) }}" method="post">
+                                            @method('delete')                            
+                                            @csrf
+                                            <x-jet-danger-button type="sutbmi">Eliminar</x-jet-danger-button>
+                                        </form>
                                     </td>
                                 @endcan
                                 

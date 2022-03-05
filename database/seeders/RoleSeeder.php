@@ -84,6 +84,22 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.propositos.destroy',
                             'description' => 'Eliminar proposito de gasto'])->syncRoles([$role1]);
 
-        
+        Permission::create(['name' => 'admin.eventos.index',
+                            'description' => 'Ver calendario de eventos'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.eventos.create',
+                            'description' => 'Crear evento'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.eventos.edit',
+                            'description' => 'Editar evento'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.eventos.destroy',
+                            'description' => 'Eliminar evento'])->syncRoles([$role1]);
+
+         Permission::create(['name' => 'admin.carrucel.index',
+                            'description' => 'Ver carrusel'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.carrucel.create',
+                            'description' => 'Crear carrusel'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.carrucel.edit',
+                            'description' => 'Editar carrusel'])->syncRoles([$role1, $role2]);
+        Permission::create(['name' => 'admin.carrucel.destroy',
+                            'description' => 'Eliminar carrusel'])->syncRoles([$role1]);
     }
 }

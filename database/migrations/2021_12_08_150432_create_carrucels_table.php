@@ -17,12 +17,12 @@ class CreateCarrucelsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('descripcion');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
 
             $table->foreign('user_id')
                     ->references('id')
                     ->on('users')
-                    ->onUpdate('cascade');
+                    ->onDelete('set null');
             $table->timestamps();
         });
     }

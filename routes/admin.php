@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
-Route::resource('users', UserController::class)->only(['index', 'edit', 'update'])->names('admin.users');
+Route::resource('users', UserController::class)->only(['index', 'edit', 'update', 'create', 'store', 'destroy'])->names('admin.users');
 
 Route::resource('roles', RoleController::class)->names('admin.roles');
 

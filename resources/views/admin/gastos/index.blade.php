@@ -21,6 +21,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 @stop
 
 @section('js')

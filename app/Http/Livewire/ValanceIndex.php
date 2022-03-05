@@ -19,31 +19,22 @@ class ValanceIndex extends Component
 
     public function render()
     {
-        setlocale(LC_MONETARY, 'en_US.UTF-8');
-        if (!$this->search) {
-            $diezmos = Diezmo::sum('monto');
-            $ofrendas = Ofrenda::sum('recaudo');
-            $gastos = Gasto::sum('monto');
-            $eventos = Evento::count();
-            $eventos = Evento::count();
-        } else {
-            $diezmos = Diezmo::where('created_at', 'LIKE', '%' . $this->search . '%')
-                ->sum('monto');
-            $ofrendas = Ofrenda::where('created_at', 'LIKE', '%' . $this->search . '%')
-                ->sum('recaudo');
-            $gastos = Gasto::where('created_at', 'LIKE', '%' . $this->search . '%')
-                ->sum('monto');
-            $eventos = Evento::where('start', 'LIKE', '%' . $this->search . '%')->count();
+        $roles = Role::all();
+        $diezmos = Diezmo::where('created_at', 'LIKE', '%' . $this->search . '%')
+            ->sum('monto');
+        $ofrendas = Ofrenda::where('created_at', 'LIKE', '%' . $this->search . '%')
+            ->sum('recaudo');
+        $gastos = Gasto::where('created_at', 'LIKE', '%' . $this->search . '%')
+            ->sum('monto');
+        $eventos = Evento::where('start', 'LIKE', '%' . $this->search . '%')->count();
+        $users = User::withCount('roles')->count();
 
-        }
         $t_ingresoss = $this->sumaingresos($diezmos, $ofrendas);
         $t_valancee = $this->totalvalance($gastos);
 
         $miembros = Miembro::count();
-        $roles = count(User::withCount('roles')->get());
-        return view(
-            'livewire.valance-index',
-            compact('diezmos', 'ofrendas', 'gastos', 't_ingresoss', 't_valancee', 'miembros', 'roles', 'eventos')
+        return view('livewire.valance-index',
+            compact('diezmos', 'ofrendas', 'gastos', 't_ingresoss', 't_valancee', 'miembros', 'users', 'roles', 'eventos')
         );
     }
 
