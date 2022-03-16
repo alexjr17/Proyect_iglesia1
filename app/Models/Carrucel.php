@@ -16,7 +16,7 @@ class Carrucel extends Model
     static $rules = [
         'title' => 'required',
         'descripcion' => 'required',
-        'file' => 'required|image'
+        'file' => 'image'
     ];
 
     public function user(){

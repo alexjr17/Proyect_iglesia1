@@ -9,7 +9,6 @@ use Livewire\WithPagination;
 class UserIndex extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
 
     public $search;
 
@@ -19,10 +18,11 @@ class UserIndex extends Component
 
     public function render()
     {
+        $indices = ['Nombre', 'Correo', ''];
         $users = User::where('name', 'LIKE', '%'. $this->search. '%')
         ->orwhere('email', 'LIKE', '%'. $this->search. '%')              
         ->latest('id')
         ->paginate(5);
-        return view('livewire.admin.user-index', compact('users'));
+        return view('livewire.admin.user-index', compact('users', 'indices'));
     }
 }

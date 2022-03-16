@@ -54,7 +54,7 @@ class CarrucelController extends Controller
             ]);
         }
 
-        return redirect()->route('admin.carrucel.edit', $carrucel);
+        return redirect()->route('admin.carrucel.edit', $carrucel)->with('info', 'Se actualizo conexito');
     }
 
     /**

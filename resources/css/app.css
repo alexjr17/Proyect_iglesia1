@@ -46,3 +46,9 @@ label {
 .input {
     @apply w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm;
 }
+/* tr>th{
+    @apply text-left text-xs font-medium text-gray-500;
+}
+tr>td{
+    @apply text-xl;
+} */

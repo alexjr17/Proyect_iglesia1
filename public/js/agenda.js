@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function enviardatos(url) {
         const datos = new FormData(formulario);
+        console.log(datos);
         // console.log(datos);
         // console.log(formulario.title.value);
 

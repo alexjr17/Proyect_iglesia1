@@ -1,5 +1,23 @@
 <div>
     @if ($miembros->count())
+        <div class="card-body">
+            <x-table>
+                @slot('indices')
+                    @if ($indices)
+                        @foreach ($indices as $indice)
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                {{ $indice }}
+                            </th>
+                        @endforeach
+                    @else
+                        <th scope="col" class="relative px-6 py-3">
+                            <span class="sr-only"></span>
+                        </th>
+                    @endif
+                @endslot
+            </x-table>
+        </div>
         <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="card-body">
             <table id="tablaMiembros" class="table table-striped table-bordered" style="width:100%">

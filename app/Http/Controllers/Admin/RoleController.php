@@ -23,8 +23,9 @@ class RoleController extends Controller
      */
     public function index()
     {
+        $indices = ['Rol', ''];
         $roles = Role::all();
-        return view('admin.roles.index', compact('roles'));
+        return view('admin.roles.index', compact('roles', 'indices'));
     }
 
     /**
