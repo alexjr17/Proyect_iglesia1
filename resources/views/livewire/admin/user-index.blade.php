@@ -7,7 +7,7 @@
 
         @if ($users->count())
             <div class="card-body">
-                <x-table>
+                <x-table id="">
                     @slot('indices')
                         @foreach ($indices as $indice)
                             @if (!$indice == '')

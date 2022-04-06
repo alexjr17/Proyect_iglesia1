@@ -18,7 +18,7 @@
             {{ session('info') }}
         </div>
     @endif
-    <div class="card">    
+    <div class="card">
         @livewire('admin.miembros-index')
     </div>
 @stop
@@ -83,26 +83,38 @@
 
             var printCounter = 0;
             // Append a caption to the table before the DataTables initialisation
-            $('#tablaMiembros').append(
-                '<caption class"btn btn-danger" style="caption-side: bottom">A fictional company\'s staff table.</caption>'
-            );
+            // $('#tablaMiembros').append(
+            //     '<caption class"btn btn-danger" style="caption-side: bottom">A fictional company\'s staff table.</caption>'
+            // );
 
 
             $('#tablaMiembros').DataTable({
-                dom: 'lBfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'copy',
                     {
-                        extend: 'excel',
+                        extend: 'excelHtml5',
+                        text: 'excel',
+                        titleAttr: 'Exportar a excel',
+                        className: 'btn btn-danger mx-6',
                         messageTop: 'The information in this table is copyright to Sirius Cybernetics Corp.'
                     },
                     {
                         extend: 'pdf',
                         messageTop: 'The information in this table is copyright to Sirius Cybernetics Corp.',
-                        messageBottom: '<div class"pt-16">firma________</div>'
+                        messageBottom: '<h1 class="pt-6"> Firma <u>_________________</u></h1>'
                     },
                     {
                         extend: 'print',
+                        text: 'Imprimir',
+                        autoPrint: false,
+                        titleAttr: 'Imprimir',
+                        className: 'btn btn-primary',
+                        exportOptions: {
+                            modifier: {
+                                page: 'current'
+                            }
+                        },
                         messageTop: function() {
                             printCounter++;
 
@@ -112,7 +124,11 @@
                                 return 'You have printed this document ' + printCounter + ' times';
                             }
                         },
-                        messageBottom: null
+                        messageBottom: `<div class="flex flex-col pt-6 bg-gray-400 ">
+                            <p class="grid-col-1"> Encargado: {{ Auth::user()->name }}</p>
+                            <p class="grid-col-1">funciones: <u>{{ Auth::user()->getRoleNames() }}</u></p>
+                            <p class="grid-col-1">Firma <u>_________________</p>
+                            </div>`
                     }
                 ],
                 responsive: true,

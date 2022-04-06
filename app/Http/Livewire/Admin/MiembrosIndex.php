@@ -22,7 +22,7 @@ class MiembrosIndex extends Component
 
     public function render()
     {
-        $indices = ['Nombre', 'Localidad', 'Telefono', 'Bautizo'];
+        $indices = ['Nombre', 'Localidad', 'Telefono', 'Bautizo', ''];
         $miembros = Miembro::all();
                     // where('user_id', '=', auth()->user()->id)->
                     // Where(function($query) {
