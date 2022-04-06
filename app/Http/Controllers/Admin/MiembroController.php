@@ -42,8 +42,8 @@ class MiembroController extends Controller
     {
         $this->location();
         $this->bautizo = [
-            'Si' => 'Si',
-            'No' => 'No'
+            ['stado' => 'Si'],
+            ['stado' => 'No']
         ];
         $cities = $this->cities->json();
         $bautizo = $this->bautizo;
