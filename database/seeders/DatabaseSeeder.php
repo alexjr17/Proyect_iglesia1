@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $carpeta = 'miembro';
-        Storage::disk('public')->deleteDirectory($carpeta);
+        // Storage::disk('public')->deleteDirectory($carpeta);
         Storage::disk('public')->makeDirectory($carpeta);
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
