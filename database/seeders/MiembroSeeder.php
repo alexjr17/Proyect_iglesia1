@@ -37,10 +37,10 @@ class MiembroSeeder extends Seeder
 
         foreach ($miembros as $miembro) {
             
-            Image::factory(1)->create([
-                'imageable_id' => $miembro->id,
-                'Imageable_type' => Miembro::class
-            ]);
+            // Image::factory(1)->create([
+            //     'imageable_id' => $miembro->id,
+            //     'Imageable_type' => Miembro::class
+            // ]);
             if ($miembro->bautizo == 'Si') {
                 Bautizo::factory(1)->create([
                     'bautizoable_id' => $miembro->id,
