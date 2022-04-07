@@ -9,16 +9,16 @@ use App\Http\Controllers\Admin\OfrendaController;
 use App\Http\Controllers\Admin\PropositoController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Livewire\Admin\MiembrosIndex;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\MiembroController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
 Route::resource('users', UserController::class)->only(['index', 'edit', 'update', 'create', 'store', 'destroy'])->names('admin.users');
 
 Route::resource('roles', RoleController::class)->names('admin.roles');
-Route::get('/admin/miembros', [MiembroController::class, 'index'])->name('admin.miembros.index');
-Route::resource('miembros', MiembroController::class)->except('show')->names('admin.miembros');
+Route::get('/admin/miembros', MiembrosIndex::class)->name('admin.miembros.index');
+// Route::resource('miembros', MiembroController::class)->except('show')->names('admin.miembros');
 
 Route::resource('propositos', PropositoController::class)->except('show')->names('admin.propositos');
 
