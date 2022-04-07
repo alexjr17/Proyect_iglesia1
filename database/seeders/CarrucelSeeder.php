@@ -16,24 +16,24 @@ class CarrucelSeeder extends Seeder
      */
     public function run()
     {
-        $carrucel = Carrucel::create([
-            'title' => 'titulo 1',
-            'descripcion' => 'contenido 1',
-            'user_id' => User::all()->random()->id
-        ]);
-        $carrucel->image()->create([
-            'url' => 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
-            'imageable_id' => $carrucel->id,
-            'Imageable_type' => Carrucel::class
-        ]);
-        // $carrucels = Carrucel::factory(5)->create();
+        // $carrucel = Carrucel::create([
+        //     'title' => 'titulo 1',
+        //     'descripcion' => 'contenido 1',
+        //     'user_id' => User::all()->random()->id
+        // ]);
+        // $carrucel->image()->create([
+        //     'url' => 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+        //     'imageable_id' => $carrucel->id,
+        //     'Imageable_type' => Carrucel::class
+        // ]);
+        $carrucels = Carrucel::factory(5)->create();
 
-        // foreach ($carrucels as $carrucel) {
-        //     Image::factory(1)->create([
-        //         'imageable_id' => $carrucel->id,
-        //         'Imageable_type' => Carrucel::class
-        //     ]);
-        // }
+        foreach ($carrucels as $carrucel) {
+            Image::factory(1)->create([
+                'imageable_id' => $carrucel->id,
+                'Imageable_type' => Carrucel::class
+            ]);
+        }
         
     }
 }

@@ -26,12 +26,12 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(MiembroSeeder::class);
-        // $this->call(CarrucelSeeder::class);
-        // Ofrenda::factory(10)->create();
-        // Proposito::factory(3)->create();
-        // Gasto::factory(10)->create();
-        // Diezmo::factory(10)->create();
-        // Evento::factory(10)->create();
+        $this->call(CarrucelSeeder::class);
+        Ofrenda::factory(10)->create();
+        Proposito::factory(3)->create();
+        Gasto::factory(10)->create();
+        Diezmo::factory(10)->create();
+        Evento::factory(10)->create();
 
     }
 }
