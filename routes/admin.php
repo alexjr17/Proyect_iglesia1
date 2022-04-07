@@ -18,7 +18,6 @@ Route::resource('users', UserController::class)->only(['index', 'edit', 'update'
 
 Route::resource('roles', RoleController::class)->names('admin.roles');
 
-Route::resource('miembros', MiembroController::class)->except('show')->names('admin.miembros');
 
 Route::resource('propositos', PropositoController::class)->except('show')->names('admin.propositos');
 
