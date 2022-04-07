@@ -5,12 +5,12 @@ use App\Http\Controllers\Admin\DiezmoController;
 use App\Http\Controllers\Admin\EventoController;
 use App\Http\Controllers\Admin\GastoController;
 use App\Http\Controllers\Admin\HomeController;
-use App\Http\Controllers\admin\MiembroController;
 use App\Http\Controllers\Admin\OfrendaController;
 use App\Http\Controllers\Admin\PropositoController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\MiembroController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
