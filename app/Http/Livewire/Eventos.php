@@ -31,7 +31,8 @@ class Eventos extends Component
             return view('livewire.eventos', compact('eventos'));
         } else {
             $this->show_evento->start = Carbon::createFromFormat('Y-m-d H:i:s', $this->show_evento->start)->toFormattedDateString();
-            return view('livewire.eventos', compact('eventos',$this->show_evento));
+            $evento= $this->show_evento;
+            return view('livewire.eventos', compact('eventos', 'evento'));
         }
     }
     public function show(Evento $evento)
