@@ -17,7 +17,7 @@ Route::get('', [HomeController::class, 'index'])->name('admin.home');
 Route::resource('users', UserController::class)->only(['index', 'edit', 'update', 'create', 'store', 'destroy'])->names('admin.users');
 
 Route::resource('roles', RoleController::class)->names('admin.roles');
-
+Route::get('admin/miembros', [MiembroController::class, 'index'])->name('admin.miembros.index');
 Route::resource('miembros', MiembroController::class)->except('show')->names('admin.miembros');
 
 Route::resource('propositos', PropositoController::class)->except('show')->names('admin.propositos');
