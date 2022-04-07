@@ -14,6 +14,7 @@ class CreateBautizosTable extends Migration
     public function up()
     {
         Schema::create('bautizos', function (Blueprint $table) {
+            $table->id();
             $table->date('fecha')->nullable();        
             $table->unsignedBigInteger('bautizoable_id');
             $table->string('bautizoable_type');
