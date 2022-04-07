@@ -12,8 +12,7 @@
         @isset($carrucel->image->url)
           <img class="static w-full h-96" src="{{Storage::url($carrucel->image->url)}}" alt="">
         @else
-            <img id="picture" class="h-40 w-40 rounded-full" id=""
-                src="https://www.freejpg.com.ar/asset/900/d0/d08d/F100008153.jpg" alt="">
+            <img class="static w-full h-96" src="https://www.freejpg.com.ar/asset/900/d0/d08d/F100008153.jpg" alt="">
         @endisset
         <div class="absolute bottom-4 grid pl-8">
                 <h1 class="flex-none underline decoration-pink-500 text-5xl font-bold rounded-lg bottom-2">{{$carrucel->title}}</h1>
