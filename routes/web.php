@@ -8,6 +8,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::resource('miembros', MiembroController::class)->except('show')->names('admin.miembros');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
