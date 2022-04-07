@@ -28,12 +28,12 @@ class CarrucelSeeder extends Seeder
         // ]);
         $carrucels = Carrucel::factory(5)->create();
 
-        foreach ($carrucels as $carrucel) {
-            Image::factory(1)->create([
-                'imageable_id' => $carrucel->id,
-                'Imageable_type' => Carrucel::class
-            ]);
-        }
+        // foreach ($carrucels as $carrucel) {
+        //     Image::factory(1)->create([
+        //         'imageable_id' => $carrucel->id,
+        //         'Imageable_type' => Carrucel::class
+        //     ]);
+        // }
         
     }
 }
