@@ -25,6 +25,7 @@ class EstadoFecha extends Component
             'options' => Carbon::JUST_NOW | Carbon::ONE_DAY_WORDS | Carbon::TWO_DAY_WORDS,
         ]);
         $this->evento->start = Carbon::createFromFormat('Y-m-d H:i:s', $this->evento->start)->toFormattedDateString();
-        return view('livewire.estado-fecha', compact('estado_fecha'))->with($this->evento);
+        $evento = $this->evento;
+        return view('livewire.estado-fecha', compact('estado_fecha', 'evento'));
     }
 }
