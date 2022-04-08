@@ -12,10 +12,10 @@ class ContactoController extends Controller
         $mensaje = $request->validate([
             'nombre' => 'required',
             'correo' => 'required',
-            'mensaje' => 'required',
             'asunto' => 'required',
+            'mensaje' => 'required'
         ]);
-        Mail::to('alexjose.r.r@gmail.com')->send(new FormularioContacto($mensaje));
+        Mail::to('alexjose.r.r@gmail.com')->queue(new FormularioContacto($mensaje));
         return response()->json([
             'msg' => 'se envio formulario'
         ]);

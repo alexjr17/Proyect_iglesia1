@@ -56,7 +56,25 @@
       </div>
     </div>
   </main>
-      
+  <script defer>
+    function enviar() {
+      let formulario = document.querySelector("#form");
+      console.log(form.nombre.value);
+      let formData = new FormData();
+      formData.append('nombre', form.nombre.value);
+      formData.append('correo', form.correo.value);
+      formData.append('asunto', form.asunto.value);
+      formData.append('mensaje', form.mensaje.value);
+      console.log(formData.get('nombre'));
+      axios.post('/contacto/envio',formData)
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => {
+        console.error(err); 
+      })
+    }
+  </script>
 </x-app-layout>
 
 

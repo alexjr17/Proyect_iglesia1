@@ -8,15 +8,15 @@
 </head>
 <body>
     <div>
-        <h1>{{$correo->nombre}}</h1>
+        <h1>{{$mensaje['nombre']}}</h1>
         <span>
-            {{$correo->asunto}}
+            {{$mensaje['asunto']}}
         </span>
         <p>
-            {{$correo->mensaje}}
+            {{$mensaje['mensaje']}}
         </p>
         <div>
-            {{$correo->correo}}
+            {{$mensaje['correo']}}
         </div>
     </div>
 </body>

@@ -10,7 +10,8 @@ use Illuminate\Queue\SerializesModels;
 class FormularioContacto extends Mailable
 {
     use Queueable, SerializesModels;
-    public $nombre, $asunto, $mensaje, $correo;
+    public $asunto = 'mensaje formulario';
+    public $mensaje;
 
     /**
      * Create a new message instance.
@@ -19,10 +20,7 @@ class FormularioContacto extends Mailable
      */
     public function __construct($mensaje)
     {
-        $this->nombre = $mensaje['nombre'];
-        $this->asunto = $mensaje->asunto;
-        $this->mensaje = $mensaje->mensaje;
-        $this->correo = $mensaje->correo;
+        $this->mensaje = $mensaje;
     }
 
     /**
