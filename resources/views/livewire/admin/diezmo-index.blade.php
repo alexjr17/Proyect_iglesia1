@@ -22,7 +22,7 @@
                         <tr>
                             <td>{{$diezmo->id}}</td>
                             <td id="monto">$ {{ number_format($diezmo->monto, 0, ',', '.')}}</td>
-                            <td>{{$diezmo->miembro->nombre. ' '. $diezmo->miembro->apellido}}</td>
+                            <td>{{$diezmo->miembro->nombre && $diezmo->miembro->apellido ? $diezmo->miembro->nombre. ' '. $diezmo->miembro->apellido : 'no hay registro de este'}}</td>
                             <td>{{$diezmo->created_at}}</td>
                             @can('admin.diezmos.edit')
                             <td whidth="10px">
