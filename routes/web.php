@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\admin\MiembroController;
 use Illuminate\Support\Facades\Route;
 
 
