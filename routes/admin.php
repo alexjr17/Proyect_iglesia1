@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DiezmoController;
 use App\Http\Controllers\Admin\EventoController;
 use App\Http\Controllers\Admin\GastoController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\admin\MiembroController;
 use App\Http\Controllers\Admin\OfrendaController;
 use App\Http\Controllers\Admin\PropositoController;
 use App\Http\Controllers\Admin\RoleController;
