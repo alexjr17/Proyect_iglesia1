@@ -15,7 +15,7 @@ class ContactoController extends Controller
             'asunto' => 'required',
             'mensaje' => 'required'
         ]);
-        Mail::to('alexjose.r.r@gmail.com')->queue(new FormularioContacto($mensaje));
+        Mail::to('alexjose.r.r.17@gmail.com')->queue(new FormularioContacto($mensaje));
         return response()->json([
             'msg' => 'se envio formulario'
         ]);
