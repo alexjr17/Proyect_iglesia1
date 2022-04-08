@@ -25,6 +25,8 @@
                             <td>
                             @isset($diezmo->miembro)
                                 {{$diezmo->miembro->nombre. ' '. $diezmo->miembro->apellido}}
+                            @else
+                                Vacio
                             @endisset
                             <td>{{$diezmo->created_at}}</td>
                             @can('admin.diezmos.edit')
