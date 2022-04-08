@@ -30,8 +30,7 @@ class MiembroController extends Controller
      */
     public function index()
     {
-        return 'soy el index de membro';
-        // return view('admin.miembros.index');
+        return view('admin.miembros.index');
     }
 
     /**
