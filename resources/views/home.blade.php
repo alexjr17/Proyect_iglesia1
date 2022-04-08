@@ -1,6 +1,5 @@
 
-<x-app-layout>
-
+<x-app-layout>    
   <main class="">
     
     @livewire('swiper')
@@ -48,7 +47,7 @@
       <div class="grid grid-cols-3 gap-4 py-6 text-center h-full w-full border-solid border-light-blue-500">
         <div class="col-span-3 md:col-span-2">
           <h1 class="h1 text-left">Mandanos un mensaje</h1>
-          @livewire('form-contacto')
+          <x-form-contacto />
         </div>
         <div class="col-span-3 md:col-span-1">
           <h1 class="h1">Ubicanos</h1>
@@ -56,7 +55,8 @@
         </div>                    
       </div>
     </div>
-  </main>         
+  </main>
+      
 </x-app-layout>
 
 
