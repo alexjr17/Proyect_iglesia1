@@ -10,7 +10,6 @@ use App\Http\Controllers\Admin\OfrendaController;
 use App\Http\Controllers\Admin\PropositoController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Livewire\Admin\MiembrosIndex;
 use Illuminate\Support\Facades\Route;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
