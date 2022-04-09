@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-        <h1>{{$mensaje['nombre']}}</h1>
+        {{-- <h1>{{$mensaje['nombre']}}</h1>
         <span>
             {{$mensaje['asunto']}}
         </span>
@@ -17,7 +17,7 @@
         </p>
         <div>
             {{$mensaje['correo']}}
-        </div>
+        </div> --}}
     </div>
 </body>
 </html>
