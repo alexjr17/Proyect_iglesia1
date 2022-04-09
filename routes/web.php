@@ -17,3 +17,7 @@ Route::view('/Nosotros', 'nosotros');
 Route::view('/Contactanos', 'contactanos');
 
 Route::post('/contacto/envio', [ContactoController::class, 'enviarEmail']);
+
+Route::get('/correo', function(){
+return view('mail.formulario_contacto');
+});
