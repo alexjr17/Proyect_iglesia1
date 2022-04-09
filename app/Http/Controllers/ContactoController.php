@@ -15,11 +15,11 @@ class ContactoController extends Controller
             'asunto' => 'required',
             'mensaje' => 'required'
         ]);
-        // Mail::to('alexjose.r.r.17@gmail.com')->send(new FormularioContacto($mensaje));
-        Mail::send('mail.formulario_contacto', $mensaje, function($message){
-            $message->subject('mail');
-            $message->to('alexjose.r.r.17@gmail.com');
-        });
+        Mail::to('alexjose.r.r.17@gmail.com')->send(new FormularioContacto($mensaje));
+        // Mail::send('mail.formulario_contacto', $mensaje, function($message){
+        //     $message->subject('mail');
+        //     $message->to('alexjose.r.r.17@gmail.com');
+        // });
         return response()->json([
             'msg' => 'se envio formulario'
         ]);
