@@ -66,7 +66,7 @@
       formData.append('asunto', form.asunto.value);
       formData.append('mensaje', form.mensaje.value);
       console.log(formData.get('nombre'));
-      axios.post('/contacto/envio',formData)
+      axios.post("{{ route('email.contacto') }}",formData)
       .then(res => {
         console.log(res.data)
       })
