@@ -1,5 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    .h-48 {
+        height: 12rem/* 192px */;
+    }
+    .bg-blue-600 {
+        --tw-bg-opacity: 1;
+        background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
+    }
+    .flex {
+        display: flex;
+    }
+    .items-center {
+        align-items: center;
+    }
+    .shadow-lg {
+        --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+    .rounded-b-lg {
+        border-bottom-right-radius: 0.5rem/* 8px */;
+        border-bottom-left-radius: 0.5rem/* 8px */;
+    }
+    .mx-4 {
+        margin-left: 1rem/* 16px */;
+        margin-right: 1rem/* 16px */;
+    }
+    .text-6xl {
+        font-size: 3.75rem/* 60px */;
+        line-height: 1;
+    }
+    .text-white {
+        --tw-text-opacity: 1;
+        color: rgba(255, 255, 255, var(--tw-text-opacity));
+    }
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +49,7 @@
 <body>
     <header>
         <div class="h-48 bg-blue-600 flex justify-center items-center shadow-lg rounded-b-lg mx-4">
-            <h1 class="text-6xl text-white m-x-auto">Iglesia guaranda</h1>
+            <h1 class="text-6xl text-white mx-auto">Iglesia guaranda</h1>
         </div>
     </header>
     <main class="container ">
