@@ -38,6 +38,39 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .h-80 {
+    height: 20rem/* 320px */;
+}
+.bg-gray-400 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
+}
+.w-full {
+    width: 100%;
+}
+.border-l-4 {
+    border-left-width: 4px;
+}
+.border-blue-700 {
+    --tw-border-opacity: 1;
+    border-color: rgba(29, 78, 216, var(--tw-border-opacity));
+}
+.opacity-50 {
+    opacity: 0.5;
+}
+.grid {
+    display: grid;
+}
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.gap-3 {
+    gap: 0.75rem/* 12px */;
+}
+.place-content-center {
+    place-content: center;
+}
+
 </style>
 <head>
     <meta charset="UTF-8">
@@ -52,7 +85,7 @@
             <h1 class="text-6xl text-white mx-auto">Iglesia guaranda</h1>
         </div>
     </header>
-    <main class="container ">
+    <main class="container">
         <div class="h-80 bg-gray-400 w-full border-l-4 border-r-4 border-blue-700 opacity-50">
             <div class="grid grid-cols-1 gap-3 place-content-center">
                 <h1>Mensaje</h1>
@@ -71,12 +104,12 @@
             </div>
         </div>
     </main>
-    <footer>
+    <!-- <footer>
         <div class="container ">
             <div class="px-16 py-7 bg-blue-400">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugiat beatae maxime fugit harum ullam. Dolorum laboriosam, suscipit ut perferendis distinctio nobis doloremque facere, repellat nisi maxime dignissimos voluptate adipisci.
             </div>
         </div>
-    </footer>
+    </footer> -->
 </body>
 </html>
