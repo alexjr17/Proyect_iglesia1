@@ -1,76 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    .h-48 {
-        height: 12rem/* 192px */;
-    }
-    .bg-blue-600 {
-        --tw-bg-opacity: 1;
-        background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
-    }
-    .flex {
-        display: flex;
-    }
-    .items-center {
-        align-items: center;
-    }
-    .shadow-lg {
-        --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    }
-    .rounded-b-lg {
-        border-bottom-right-radius: 0.5rem/* 8px */;
-        border-bottom-left-radius: 0.5rem/* 8px */;
-    }
-    .mx-4 {
-        margin-left: 1rem/* 16px */;
-        margin-right: 1rem/* 16px */;
-    }
-    .text-6xl {
-        font-size: 3.75rem/* 60px */;
-        line-height: 1;
-    }
-    .text-white {
-        --tw-text-opacity: 1;
-        color: rgba(255, 255, 255, var(--tw-text-opacity));
-    }
-    .mx-auto {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .h-80 {
-    height: 20rem/* 320px */;
-}
-.bg-gray-400 {
-    --tw-bg-opacity: 1;
-    background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
-}
-.w-full {
-    width: 100%;
-}
-.border-l-4 {
-    border-left-width: 4px;
-}
-.border-blue-700 {
-    --tw-border-opacity: 1;
-    border-color: rgba(29, 78, 216, var(--tw-border-opacity));
-}
-.opacity-50 {
-    opacity: 0.5;
-}
-.grid {
-    display: grid;
-}
-.grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-.gap-3 {
-    gap: 0.75rem/* 12px */;
-}
-.place-content-center {
-    place-content: center;
-}
-
 </style>
 <head>
     <meta charset="UTF-8">
@@ -81,13 +10,13 @@
 </head>
 <body>
     <header>
-        <div class="h-48 bg-blue-600 flex justify-center items-center shadow-lg rounded-b-lg mx-4">
-            <h1 class="text-6xl text-white mx-auto">Iglesia guaranda</h1>
+        <div class="header">
+            <h1 class="header-h1">Iglesia guaranda</h1>
         </div>
     </header>
     <main class="container">
-        <div class="h-80 bg-gray-400 w-full border-l-4 border-r-4 border-blue-700 opacity-50">
-            <div class="grid grid-cols-1 gap-3 place-content-center">
+        <div class="main">
+            <div class="main-body">
                 <h1>Mensaje</h1>
                 <div>
                     {{$mensaje['nombre']}}
